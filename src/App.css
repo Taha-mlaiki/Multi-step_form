@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+    font-family: 'Ubuntu', sans-serif;
+}
+ul {
+    padding:0;
+    margin:0;
+}
+li {
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background-color: hsl(217, 100%, 97%);
+}
+.main .form-step {
+    position: absolute;
+    height: 90%;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    padding:10px;
+}
+.main .form-step .side-step {
+    width: 25%;
+    background-image: url(./assets/images/bg-sidebar-desktop.svg);
+    background-size: cover;
+    border-radius: 7px;
+    padding:20px 12px;
+
+}
+.main .form-step .side-step li {
+    font-size:14px;
+    color:white;
+    margin-bottom: 25px;
+}
+.main .form-step .side-step li div {
+   display: flex;
+   flex-direction: column;
+ }
+
+.main .form-step .side-step .step-num {
+    width: 33px;
+    height: 33px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid white;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:18px
+}
+.main .form-step .side-step .step-num.active {
+    color:black;
+    background-color: hsl(206, 94%, 87%);
+}
+.main .form-step .side-step li > div span:first-of-type {
+    font-size:12px
+}
+.main .form-step .personal-content {
+    flex-basis: 75%;
+    height: 100%;
+    color: hsl(213, 96%, 18%);
+
+}
+.main .form-step .personal-content h2 {
+    font-weight: 600;
+}
+.main .form-step .personal-content p {
+    color:hsl(231, 11%, 63%)
+}
+.main .form-step .personal-content label {
+    display: block;
+    color: hsl(213, 96%, 18%);
+    font-size:14px;
+    margin-bottom:4px;
+}
+.main .form-step .personal-content > div {
+    width: fit-content;
+    margin-inline:auto;
+    margin-top:30px;
+    position: relative;
+}
+.main .form-step .personal-content div span,
+.main .form-step .personal-content .required span {
+    position: absolute;
+    font-size: 13px;
+    right:10px;
+    margin-top:-20px;
+    color:hsl(354, 84%, 57%);
+    display: none;
+}
+.main .form-step .personal-content .required span {
+    display: inline;
+}
+.main .form-step .personal-content  div input {
+    width: 100%;
+    padding:8px 20px;
+    border-radius: 7px;
+    border:1px solid hsl(229, 24%, 87%);
+    outline: none;
+    color:#242323
+}
+.main .form-step .personal-content .required input {
+    border:1px solid hsl(354, 84%, 57%);
+}
+.main .form-step .personal-content > div input::placeholder {
+    color:hsl(231, 11%, 63%);
+}
+.main .form-step .personal-content > div input:focus {
+    border: 1px solid hsl(243, 100%, 62%);
+}
+.main .form-step .personal-content form > div {
+    margin-top:20px;
+}
+.main .form-step .personal-content form button {
+    padding:8px 15px;
+    border:none;
+    color:white;
+    background-color: hsl(213, 96%, 18%);
+    border-radius: 7px;
+    transition: 0.3s;
+    margin-left:auto;
+}
+.main .form-step .personal-content form button:hover {
+    background-color: hsl(213, 93%, 33%);
+}
+@media (max-width:992px) {
+    .main .form-step {
+        width: 87%;
+    }
+}
+@media (max-width:768px) {
+
+    .main .form-step {
+        top:0;
+        left:0;
+        transform: translate(0,0);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        height: fit-content;
+    }
+    .main .form-step .side-step {
+        width: 100%;
+        height:80px;
+        background-image: url(./assets/images/bg-sidebar-mobile.svg);
+        border-radius: 0;
+        height: fit-content;
+    }
+    .main .form-step .side-step ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom:100px;
+    }
+    .main .form-step .side-step li {
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+        margin:0;
+    }
+    .main .form-step .side-step li  div {
+       display: none;
+    }
+    .main .form-step .personal-content {
+        background-color: hsl(217, 100%, 97%);
+    }
+    .main .form-step .personal-content > div {
+        width: 90%;
+        background-color: white;
+        padding:15px;
+        border-radius: 8px;
+        margin-top:-90px;
+        margin-inline:auto;
+    }
+}
+.select-plan{
+    margin-inline:auto;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+.select-plan > div {
+    width: 75%;
+    margin-inline:auto;
+}
+.select-plan h3 {
+    margin-top:30px;
+    font-weight: bold;
+    color:hsl(213, 96%, 18%)
+}
+.select-plan p {
+    color:hsl(231, 11%, 63%);
+    margin-bottom:30px;
+}
+.select-plan .plan {
+    border:1px solid hsl(231, 11%, 63%);
+    padding:10px;
+    border-radius: 8px;
+    width: 140px;
+    cursor: pointer;
+}
+.select-plan .plan.active {
+    border:1px solid hsl(243, 100%, 62%);
+    background-color:  hsl(217, 100%, 97%);
+}
+.select-plan .plan img {
+    width: 45px;
+    margin-bottom:30px;
+    margin-top:10px;
+}
+.select-plan .plan .title {
+    color:hsl(213, 96%, 18%)
+}
+.select-plan .plan .price {
+    color:hsl(231, 11%, 63%);
+    font-size:15px;
+}
+.select-plan .month-year {
+    margin-top:20px;
+    background-color:  hsl(231, 100%, 99%);
+    padding:10px ;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+.select-plan .month-year span {
+    color:hsl(231, 11%, 63%);
+}
+.select-plan .month-year.month span:first-of-type {
+    color:hsl(213, 96%, 18%);
+}
+.select-plan .month-year.year span:last-of-type {
+    color:hsl(213, 96%, 18%);
+}
+.select-plan .month-year .button {
+    width: 50px;
+    height: 20px;
+    background-color: hsl(213, 96%, 18%);
+    margin:0;
+    border-radius: 20px;
+    position: relative;
+    margin-inline:20px;
+    margin-top:2px;
+    cursor: pointer;
+}
+.select-plan .month-year.month .button::before ,
+.select-plan .month-year.year .button::before{
+    position: absolute;
+    content:"";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: white;
+    top:50%;
+    transform: translateY(-50%);
+    transition: 0.3s ;
+}
+.select-plan .month-year.year .button::before {
+    top:50%;
+    left:100%;
+    margin-left:-18px
+}
+.select-plan .month-year.month .button::before {
+    top:50%;
+    left:2px;
+}
+.step {
+    width: 100%;
+    margin-top:auto;
+    margin-bottom: 20px;
+}
+.step .back {
+    color:hsl(231, 11%, 63%);
+    cursor: pointer;
+}
+.step .next {
+    padding:8px 15px;
+    border-radius: 8px;
+    border:none;
+    color:white;
+    background-color:  hsl(213, 96%, 18%);
+    transition: 0.3s;
+}
+.step .next:hover {
+    background-color:  hsl(213, 93%, 33%);
+    
+}
+@media (max-width:768px) {
+    .select-plan {
+        width: 90%;
+        margin-inline:auto;
+        height: 100%;
+    }
+    .select-plan > div {
+        width: 95%;
+        height: 100%;
+        background-color: white;
+        margin-inline:auto;
+        padding:15px;
+        border-radius: 10px;
+        margin-top:-60px;
+        box-shadow: 1px 1px 20px #ddd;
+    }
+    .select-plan .plan {
+        width: 90%;
+        margin-bottom:15px;
+        align-items: center;
+        padding:20px;
+        margin-inline:auto;
+    }
+    .select-plan .plan img {
+        margin:0;
+        margin-right:10px
+    }
+}
+.add-ons {
+    width:75%;
+}
+.add-ons > div {
+    width: 80%;
+    height: 100%;
+    margin-inline:auto;
+    display: flex;
+    flex-direction: column;
+}
+.add-ons > div h3 {
+    font-weight: 700;
+    color:hsl(213, 96%, 18%);
+    margin-top:25px;
+}
+.add-ons > div p {
+    color: hsl(231, 11%, 63%)
+}
+.add-ons div form label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding:14px;
+    border:1px solid hsl(231, 11%, 63%);
+    border-radius:8px;
+    margin-bottom:20px;
+}
+.add-ons div form label.active {
+    border-color:hsl(243, 100%, 62%);
+    background-color: hsl(217, 100%, 97%);
+}
+.add-ons div form label > div span {
+    color:hsl(243, 100%, 62%)
+}
+.add-ons div form label.active > div span:last-of-type {
+    font-weight:500;
+}
+.add-ons div form label input {
+    width: 25px;
+    height: 25px;
+    font-size: 40px;
+    margin-right:20px;
+    color:hsl(213, 96%, 18%);
+    opacity: 0;
+}
+.add-ons div form label > div::before {
+    position: absolute;
+    content:"";
+    width: 20px;
+    height: 20px;
+    border:1px solid hsl(243, 100%, 62%);
+    border-radius: 3px;
+    left:20px;
+    top:50%;
+    transform: translateY(-50%);
+}
+.add-ons div form label > div::after {
+    position: absolute;
+    content:url(./assets/images/icon-checkmark.svg);
+    width: 20px;
+    height: 20px;
+    border:1px solid hsl(243, 100%, 62%);
+    border-radius: 3px;
+    background-color: hsl(243, 100%, 62%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    left:20px;
+    top:50%;
+    transform: translateY(-50%) scale(0);
+}
+.add-ons div form label input:checked + div::after {
+    transform: translateY(-50%) scale(1);
+}
+.add-ons div form label > div span:first-of-type {
+    font-weight: 500;
+    color:hsl(213, 96%, 18%);
+}
+.add-ons div form label > div p {
+    color:hsl(231, 11%, 63%);
+    font-size: 14px;
+}
+.add-ons div form label > div span:last-of-type {
+    position: absolute;
+    right:20px;
+    top:50%;
+    transform: translateY(-50%);
+}
+@media (max-width:768px) {
+    .add-ons {
+        width: 100%;        
+    }
+    .add-ons > div {
+        box-shadow: 1px 1px 20px #ddd;
+        padding:15px;
+        border-radius: 10px;
+        margin-top:-60px;
+        background-color: white;
+        width: 90%;
+        margin-bottom: 35px;
+    }
+    
+}
+
+.finishing {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+
+}
+.finishing > div {
+    margin-inline:auto;
+    width: 70%;
+}
+.finishing > div > div {
+    padding:20px;
+    background-color: hsl(231, 100%, 99%);
+    border-radius: 10px;
+}
+.finishing > div h2 {
+    color:hsl(213, 96%, 18%);
+    margin-top:25px;
+}
+.finishing > div h2 + p {
+    color:hsl(231, 11%, 63%);
+}
+.finishing > div .pick {
+    position: relative;
+    border-radius:8px;
+   padding-bottom:17px;
+}
+.finishing > div .pick span {
+    color:hsl(213, 96%, 18%);
+    font-weight: 500;
+}
+.finishing > div .pick span:nth-of-type(2){
+    color:hsl(243, 100%, 62%);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.finishing > div .pick span:last-of-type {
+    position: absolute;
+    top:40%;
+    right:10px;
+    transform: translateY(-50%);
+    font-weight: 700;
+}
+.finishing > div .features > div span {
+    color: hsl(231, 11%, 63%)
+}
+.finishing > div .features > div span:last-of-type {
+    color:hsl(213, 96%, 18%);
+    font-weight: 500;
+}
+.finishing > div .total {
+    background-color: white;
+    margin-top:10px;
+}
+.finishing > div .total span {
+    color:hsl(231, 11%, 63%);
+    font-size: 15px;
+}
+.finishing > div .total h5 {
+    color:hsl(243, 100%, 62%);
+    font-weight: 700;
+    font-size:25px
+}
+.finishing .step {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0  10px;
+}
+.finishing .step .next {
+    background-color:hsl(243, 100%, 62%);
+}
+.finishing .step .next:hover {
+    background-color:hsl(243, 83%, 68%)
+}
+
+.summary {
+    height: 100%;
+    width: 75%;
+}
+.summary > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 70%;
+    margin-inline:auto;
+}
+.summary img {
+    margin-top:-20px;
+    margin-bottom:25px;
+}
+.summary h2 {
+    color:hsl(213, 96%, 18%);
+    margin-bottom:15px;
+    font-weight: 700;
+}
+.summary p {
+    line-height: 1.8;
+    color:hsl(231, 11%, 63%)
+}
+@media (max-width:768px) {
+    .finishing {
+        width: 100%;
+    }
+    .finishing > div {
+        box-shadow: 1px 1px 20px #ddd;
+        padding:15px;
+        border-radius: 10px;
+        margin-top:-60px;
+        background-color: white;
+        height: fit-content;
+        width: 90%;
+        margin-bottom: 35px;
+    }
+    .finishing > div .features > div span {
+        margin-top:10px;
+    }
+    .finishing > div .total {
+        margin-bottom:20px
+    }
+    .summary {
+        width: 100%;
+    }
+    .summary > div {
+        box-shadow: 1px 1px 20px #ddd;
+        padding:20px;
+        margin-top:-60px;
+        border-radius: 10px;
+        background-color: white;
+        height: fit-content;
+        width: 90%;
+        margin-bottom:35px;
+    }
+    .summary img {
+        margin-top:40px;
+        
+    }
+}
+
